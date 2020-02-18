@@ -826,6 +826,11 @@ In the above file, change the following parameters as required.
   This field  represents how the data will be written to the disks on a given pool instance on a node. Supported values are `striped`, `mirrored`, `raidz` and `raidz2`.
 
   Note: In OpenEBS, the pool instance does not extend beyond a node. The replication happens at volume level but not at the pool level. See [volumes and pools relationship](/docs/next/cstor.html#relationship-between-cstor-volumes-and-cstor-pools) in cStor for a deeper understanding.
+  
+for striped, you can have any number of disks
+for mirrored, you must have an even number of disks
+for raidZ types, you must have a minimum of 6 disks
+
 
 - `blockDeviceList`
 
